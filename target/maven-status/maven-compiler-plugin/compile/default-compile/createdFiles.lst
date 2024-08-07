@@ -1,0 +1,6 @@
+hospital/model/Doctor.class
+hospital/model/Exam.class
+hospital/model/Medication.class
+hospital/Main.class
+hospital/model/Patient.class
+hospital/model/Appointment.class
