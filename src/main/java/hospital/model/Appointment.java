@@ -1,4 +1,4 @@
-package poxa.hospital.model;
+package hospital.model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
