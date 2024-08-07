@@ -1,4 +1,4 @@
-package main.hospital.model;
+package poxa.hospital.model;
 
 public class Medication {
     private String id;

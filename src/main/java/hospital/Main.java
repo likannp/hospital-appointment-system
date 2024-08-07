@@ -1,7 +1,7 @@
-package main.hospital;
-import main.hospital.model.Appointment;
-import main.hospital.model.Doctor;
-import main.hospital.model.Patient;
+package poxa.hospital;
+import poxa.hospital.model.Appointment;
+import poxa.hospital.model.Doctor;
+import poxa.hospital.model.Patient;
 
 import java.text.ParseException;
 import java.util.Date;
