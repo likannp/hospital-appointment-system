@@ -2,6 +2,7 @@ package hospital.model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -13,11 +14,15 @@ public class Appointment {
     private Patient patient;
     private String tipo;
     private Date data;
+    private ArrayList<Medication> medications;
+    private ArrayList<Exam> exams;
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yyyy");
 
     public Appointment() {
         this.queryIdentifier = generateQueryIdentifier();
+        this.medications = new ArrayList<>();
+        this.exams = new ArrayList<>();
     }
 
     // Construtor com parâmetros
@@ -88,6 +93,21 @@ public class Appointment {
     public void setFormattedDate(String dateString) throws ParseException {
         this.data = DATE_FORMAT.parse(dateString);
     }
+    public void addMedication(Medication medication) {
+        this.medications.add(medication);
+    }
+
+    public ArrayList<Medication> getMedications() {
+        return medications;
+    }
+
+    public void addExam(Exam exam) {
+        this.exams.add(exam);
+    }
+
+    public ArrayList<Exam> getExams() {
+        return exams;
+    }
 
     @Override
     public String toString() {
@@ -96,6 +116,8 @@ public class Appointment {
                 ", CRM: " + (doctor != null ? doctor.getCrm() : "N/A") +
                 ", Paciente: " + (patient != null ? patient.getName() : "N/A") +
                 ", Tipo: '" + tipo + '\'' +
-                ", Data: " + getFormattedDate();
+                ", Data: " + getFormattedDate()+
+                ", Medicamentos: " + medications +
+                ", Exames: " + exams;
     }
 }
