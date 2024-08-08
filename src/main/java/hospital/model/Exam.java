@@ -2,14 +2,14 @@ package hospital.model;
 
 public class Exam {
     private String id;
-    private String consultationId;
+    private Appointment appointment;
     private String name;
     private String observation;
     private String result;
 
-    public Exam(String id, String consultationId, String name, String observation, String result) {
+    public Exam(String id, Appointment appointment, String name, String observation, String result) {
         this.id = id;
-        this.consultationId = consultationId;
+        this.appointment = appointment;
         this.name = name;
         this.observation = observation;
         this.result = result;
@@ -23,12 +23,12 @@ public class Exam {
         this.id = id;
     }
 
-    public String getConsultationId() {
-        return consultationId;
+    public Appointment getAppointment() {
+        return appointment;
     }
 
-    public void setConsultationId(String consultationId) {
-        this.consultationId = consultationId;
+    public void setAppointment(Appointment appointment) {
+        this.appointment = appointment;
     }
 
     public String getName() {
@@ -59,7 +59,7 @@ public class Exam {
     public String toString() {
         return "Exam{" +
                 "id='" + id + '\'' +
-                ", consultationId='" + consultationId + '\'' +
+                ", appointment=" + (appointment != null ? appointment.getQueryIdentifier() : "N/A") +
                 ", name='" + name + '\'' +
                 ", observation='" + observation + '\'' +
                 ", result='" + result + '\'' +
