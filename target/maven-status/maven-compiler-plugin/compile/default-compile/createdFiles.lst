@@ -1,6 +1,9 @@
-hospital/model/Doctor.class
+hospital/exception/PatientException.class
 hospital/model/Exam.class
-hospital/model/Medication.class
 hospital/Main.class
 hospital/model/Patient.class
+hospital/exception/AppointmentException.class
+hospital/model/Doctor.class
+hospital/exception/DoctorException.class
+hospital/model/Medication.class
 hospital/model/Appointment.class

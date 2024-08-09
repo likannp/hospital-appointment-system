@@ -1,6 +1,9 @@
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Medication.java
+/home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/exception/PatientException.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Doctor.java
+/home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/exception/DoctorException.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Appointment.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/Main.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Patient.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Exam.java
+/home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/exception/AppointmentException.java
