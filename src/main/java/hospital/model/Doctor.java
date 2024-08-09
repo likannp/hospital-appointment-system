@@ -1,6 +1,6 @@
 package hospital.model;
-import hospital.exception.DoctorException;
 
+import hospital.exception.DoctorException;
 
 public class Doctor {
     private String crm;
@@ -8,13 +8,13 @@ public class Doctor {
     private String telefone;
     private String email;
 
-    public Doctor(){}
+    public Doctor() {}
 
     public Doctor(String crm, String nome, String telefone, String email) {
-        this.crm = crm;
-        this.nome = nome;
-        this.telefone = telefone;
-        this.email = email;
+        setCrm(crm);
+        setNome(nome);
+        setTelefone(telefone);
+        setEmail(email);
     }
 
     public String getCrm() {
@@ -27,6 +27,7 @@ public class Doctor {
         }
         this.crm = crm;
     }
+
     public String getNome() {
         return nome;
     }
@@ -37,6 +38,7 @@ public class Doctor {
         }
         this.nome = nome;
     }
+
     public String getEmail() {
         return email;
     }
@@ -45,11 +47,12 @@ public class Doctor {
         if (email == null || email.isEmpty()) {
             throw new DoctorException("Email cannot be null or empty");
         }
-        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) { // Exemplo básico de validação de email
+        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
             throw new DoctorException("Invalid email format");
         }
         this.email = email;
     }
+
     public String getTelefone() {
         return telefone;
     }
@@ -58,8 +61,13 @@ public class Doctor {
         if (telefone == null || telefone.isEmpty()) {
             throw new DoctorException("Phone number cannot be null or empty");
         }
+        // Adicionar uma expressão regular para validar o formato do telefone
+        if (!telefone.matches("\\(\\d{2}\\) \\d{4,5}-\\d{4}")) {
+            throw new DoctorException("Invalid phone number format");
+        }
         this.telefone = telefone;
     }
+
     @Override
     public String toString() {
         return "Doctor{" +
