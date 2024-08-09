@@ -2,15 +2,15 @@ package hospital.model;
 
 public class Medication {
     private String id;
-    private String consultationId;
+    private Appointment appointment;
     private String name;
     private String type;
     private String instructions;
     private String dosage;
 
-    public Medication(String id, String consultationId, String name, String type, String instructions, String dosage) {
+    public Medication(String id, Appointment appointment, String name, String type, String instructions, String dosage) {
         this.id = id;
-        this.consultationId = consultationId;
+        this.appointment = appointment;
         this.name = name;
         this.type = type;
         this.instructions = instructions;
@@ -33,12 +33,12 @@ public class Medication {
         this.name = name;
     }
 
-    public String getConsultationId() {
-        return consultationId;
+    public Appointment getApoointment() {
+        return appointment;
     }
 
-    public void setConsultationId(String consultationId) {
-        this.consultationId = consultationId;
+    public void setApoointment(Appointment appointment) {
+        this.appointment = appointment;
     }
 
     public String getType() {
@@ -69,7 +69,7 @@ public class Medication {
     public String toString() {
         return "Medication{" +
                 "id='" + id + '\'' +
-                ", consultationId='" + consultationId + '\'' +
+                ", appointment ='" + appointment + '\'' +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", instructions='" + instructions + '\'' +
