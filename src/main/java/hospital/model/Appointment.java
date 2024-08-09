@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
+import hospital.exception.AppointmentException;
 
 public class Appointment {
     private static final AtomicInteger queryCounter = new AtomicInteger(0);
@@ -27,7 +28,7 @@ public class Appointment {
 
     // Construtor com parâmetros
     public Appointment(Doctor doctor, Patient patient, String tipo, Date data) {
-        this.queryIdentifier = generateQueryIdentifier(); // Gera o identificador da consulta
+        this();
         this.doctor = doctor;
         this.patient = patient;
         this.tipo = tipo;
@@ -59,6 +60,9 @@ public class Appointment {
     }
 
     public void setDoctor(Doctor doctor) {
+        if (doctor == null) {
+            throw new AppointmentException("Doctor cannot be null");
+        }
         this.doctor = doctor;
     }
 
@@ -67,6 +71,9 @@ public class Appointment {
     }
 
     public void setPatient(Patient patient) {
+        if (patient == null) {
+            throw new AppointmentException("Patient cannot be null");
+        }
         this.patient = patient;
     }
 
@@ -75,6 +82,9 @@ public class Appointment {
     }
 
     public void setTipo(String tipo) {
+        if (tipo == null || tipo.isEmpty()) {
+            throw new AppointmentException("Type of appointment cannot be null or empty");
+        }
         this.tipo = tipo;
     }
 
@@ -83,6 +93,9 @@ public class Appointment {
     }
 
     public void setData(Date data) {
+        if (data == null) {
+            throw new AppointmentException("Date cannot be null");
+        }
         this.data = data;
     }
 
@@ -91,9 +104,16 @@ public class Appointment {
     }
 
     public void setFormattedDate(String dateString) throws ParseException {
+        if (dateString == null || dateString.isEmpty()) {
+            throw new AppointmentException("Date string cannot be null or empty");
+        }
         this.data = DATE_FORMAT.parse(dateString);
     }
+
     public void addMedication(Medication medication) {
+        if (medication == null) {
+            throw new AppointmentException("Medication cannot be null");
+        }
         this.medications.add(medication);
     }
 
@@ -102,6 +122,9 @@ public class Appointment {
     }
 
     public void addExam(Exam exam) {
+        if (exam == null) {
+            throw new AppointmentException("Exam cannot be null");
+        }
         this.exams.add(exam);
     }
 
@@ -116,7 +139,7 @@ public class Appointment {
                 ", CRM: " + (doctor != null ? doctor.getCrm() : "N/A") +
                 ", Paciente: " + (patient != null ? patient.getName() : "N/A") +
                 ", Tipo: '" + tipo + '\'' +
-                ", Data: " + getFormattedDate()+
+                ", Data: " + getFormattedDate() +
                 ", Medicamentos: " + medications +
                 ", Exames: " + exams;
     }
