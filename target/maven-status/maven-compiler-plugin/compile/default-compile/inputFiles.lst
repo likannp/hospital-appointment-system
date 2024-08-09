@@ -1,3 +1,4 @@
+/home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/util/IdentifierGenerator.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Medication.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/exception/PatientException.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Doctor.java
@@ -7,3 +8,4 @@
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Patient.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/model/Exam.java
 /home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/exception/AppointmentException.java
+/home/elisangela/Área de Trabalho/Workspace/github/hospital-appointment-system/src/main/java/hospital/util/AppointmentValidator.java

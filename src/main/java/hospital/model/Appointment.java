@@ -1,19 +1,18 @@
 package hospital.model;
+import hospital.util.IdentifierGenerator;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
 import hospital.exception.AppointmentException;
 
 public class Appointment {
-    private static final AtomicInteger queryCounter = new AtomicInteger(0);
     private String id;
     private String queryIdentifier;
     private Doctor doctor;
     private Patient patient;
-    private String tipo;
+    private String type;
     private Date data;
     private ArrayList<Medication> medications;
     private ArrayList<Exam> exams;
@@ -21,7 +20,7 @@ public class Appointment {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yyyy");
 
     public Appointment() {
-        this.queryIdentifier = generateQueryIdentifier();
+        this.queryIdentifier = IdentifierGenerator.generateQueryIdentifier();
         this.medications = new ArrayList<>();
         this.exams = new ArrayList<>();
     }
@@ -31,12 +30,8 @@ public class Appointment {
         this();
         this.doctor = doctor;
         this.patient = patient;
-        this.tipo = tipo;
+        this.type = type;
         this.data = data;
-    }
-
-    private String generateQueryIdentifier() {
-        return "Q-" + queryCounter.incrementAndGet();
     }
 
     public String getId() {
@@ -77,15 +72,15 @@ public class Appointment {
         this.patient = patient;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getType() {
+        return type;
     }
 
-    public void setTipo(String tipo) {
-        if (tipo == null || tipo.isEmpty()) {
+    public void setType(String type) {
+        if (type == null || type.isEmpty()) {
             throw new AppointmentException("Type of appointment cannot be null or empty");
         }
-        this.tipo = tipo;
+        this.type = type;
     }
 
     public Date getData() {
@@ -138,7 +133,7 @@ public class Appointment {
                 ", Médico: " + (doctor != null ? doctor.getNome() : "N/A") +
                 ", CRM: " + (doctor != null ? doctor.getCrm() : "N/A") +
                 ", Paciente: " + (patient != null ? patient.getName() : "N/A") +
-                ", Tipo: '" + tipo + '\'' +
+                ", Tipo: '" + type + '\'' +
                 ", Data: " + getFormattedDate() +
                 ", Medicamentos: " + medications +
                 ", Exames: " + exams;
