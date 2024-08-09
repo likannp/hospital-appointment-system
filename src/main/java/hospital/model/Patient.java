@@ -1,4 +1,5 @@
 package hospital.model;
+import hospital.exception.PatientException;
 
 public class Patient {
     private String cpf;
@@ -8,6 +9,9 @@ public class Patient {
     private String healthInsurance;
 
     public Patient(String cpf, String address, String name, String phone, String healthInsurance) {
+        if (name == null || name.isEmpty()) {
+            throw new PatientException("Name cannot be null or empty");
+        }
         this.cpf = cpf;
         this.address = address;
         this.name = name;
@@ -36,6 +40,9 @@ public class Patient {
     }
 
     public void setName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new PatientException("Name cannot be null or empty");
+        }
         this.name = name;
     }
 
