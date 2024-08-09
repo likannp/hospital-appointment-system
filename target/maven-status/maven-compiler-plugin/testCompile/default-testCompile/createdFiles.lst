@@ -1,4 +1,5 @@
 hospital/model/BaseTest.class
+hospital/model/PatientTest.class
 hospital/model/ExamTest.class
 hospital/model/DoctorTest.class
 hospital/model/MedicationTest.class
