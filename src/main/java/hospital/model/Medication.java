@@ -1,5 +1,9 @@
 package hospital.model;
 
+import hospital.exception.ExamException;
+import hospital.exception.MedicationException;
+
+
 public class Medication {
     private String id;
     private Appointment appointment;
@@ -9,12 +13,12 @@ public class Medication {
     private String dosage;
 
     public Medication(String id, Appointment appointment, String name, String type, String instructions, String dosage) {
-        this.id = id;
-        this.appointment = appointment;
-        this.name = name;
-        this.type = type;
-        this.instructions = instructions;
-        this.dosage = dosage;
+        setId(id);
+        getAppointment(appointment);
+        setName(name);
+        setType(type);
+        setInstructions(instructions);
+        setDosage(dosage);
     }
 
     public String getId() {
@@ -22,6 +26,9 @@ public class Medication {
     }
 
     public void setId(String id) {
+        if (id == null || id.isEmpty()) {
+            throw new MedicationException("ID cannot be null or empty");
+        }
         this.id = id;
     }
 
@@ -30,6 +37,9 @@ public class Medication {
     }
 
     public void setName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new MedicationException("Name cannot be null or empty");
+        }
         this.name = name;
     }
 
@@ -37,7 +47,10 @@ public class Medication {
         return appointment;
     }
 
-    public void setApoointment(Appointment appointment) {
+    public void getAppointment(Appointment appointment) {
+        if (appointment == null) {
+            throw new MedicationException("Appointment cannot be null");
+        }
         this.appointment = appointment;
     }
 
@@ -54,6 +67,9 @@ public class Medication {
     }
 
     public void setInstructions(String instructions) {
+        if (instructions == null || instructions.isEmpty()) {
+            throw new MedicationException("Instructions cannot be null or empty");
+        }
         this.instructions = instructions;
     }
 
@@ -62,6 +78,9 @@ public class Medication {
     }
 
     public void setDosage(String dosage) {
+        if (dosage == null || dosage.isEmpty()) {
+            throw new MedicationException("Dosage cannot be null or empty");
+        }
         this.dosage = dosage;
     }
 
