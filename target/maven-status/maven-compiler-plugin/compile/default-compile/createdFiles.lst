@@ -1,4 +1,5 @@
 hospital/util/IdentifierGenerator.class
+hospital/exception/ExamException.class
 hospital/util/AppointmentValidator.class
 hospital/exception/PatientException.class
 hospital/model/Exam.class
