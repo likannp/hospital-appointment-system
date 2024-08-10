@@ -17,7 +17,7 @@ public class Appointment {
     private ArrayList<Medication> medications;
     private ArrayList<Exam> exams;
 
-    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yyyy");
+    static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yyyy");
 
     public Appointment() {
         this.queryIdentifier = IdentifierGenerator.generateQueryIdentifier();
@@ -25,8 +25,7 @@ public class Appointment {
         this.exams = new ArrayList<>();
     }
 
-    // Construtor com parâmetros
-    public Appointment(Doctor doctor, Patient patient, String tipo, Date data) {
+    public Appointment(Doctor doctor, Patient patient, String type, Date data) {
         this();
         this.doctor = doctor;
         this.patient = patient;

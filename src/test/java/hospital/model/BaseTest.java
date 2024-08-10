@@ -14,5 +14,6 @@ public class BaseTest {
         patient = new Patient("54321", "Maria Oliveira", "Rua das Flores, 123", "9876-5432", "PlanoSaude123");
         appointment = new Appointment(doctor, patient, "Consulta", new Date());
     }
+
 }
 
